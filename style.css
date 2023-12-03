@@ -8,6 +8,8 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 100vw;
+  max-width: 100vw;
   height: 100vh;
   margin: 0;
   background: linear-gradient(to bottom, skyblue 50%, rgba(61, 37, 37, 0.794) 50%) no-repeat;
@@ -122,6 +124,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
 
 .tribune-body {
@@ -214,7 +217,7 @@ span {
     color: rgba(255, 255, 0, 0.632);
   }
 }
-@media screen and (min-width: 391px) {
+@media screen and (min-width: 431px) {
   .tribune-div {
     transform: scale(1.6);
   }
