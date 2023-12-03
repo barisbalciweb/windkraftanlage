@@ -1,0 +1,243 @@
+html {
+  user-select: none;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(
+      to bottom,
+      skyblue 50%,
+      rgba(61, 37, 37, 0.794) 50%
+    )
+    no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Saira", sans-serif;
+}
+
+/* SUN */
+
+.sun {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  animation: sun 1.5s infinite alternate;
+}
+
+.sunlight {
+  width: 4px;
+  height: 25px;
+  border-radius: 20px;
+  background-color: yellow;
+  position: absolute;
+}
+
+.sunlight1 {
+  top: 20px;
+  right: 120px;
+  transform: rotate(100deg);
+}
+
+.sunlight2 {
+  top: 70px;
+  right: 125px;
+  transform: rotate(60deg);
+}
+
+.sunlight3 {
+  top: 105px;
+  right: 95px;
+  transform: rotate(30deg);
+}
+
+.sunlight4 {
+  top: 115px;
+  right: 50px;
+  transform: rotate(-5deg);
+}
+
+.sunlight5 {
+  top: 100px;
+  right: 10px;
+  transform: rotate(-30deg);
+}
+
+.sunlight {
+  animation: sunLight 1s infinite alternate;
+}
+
+@keyframes sun {
+  from {
+  }
+  to {
+    background-color: rgb(255, 230, 0);
+  }
+}
+
+@keyframes sunLight {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+
+/* CLOUD */
+
+.cloud {
+  width: 60px;
+  position: absolute;
+  left: 0;
+}
+
+.cloud1 {
+  animation: cloudMove 25s infinite linear backwards;
+  top: 50px;
+}
+
+.cloud2 {
+  animation: cloudMove 15s 3s infinite linear backwards;
+  top: 100px;
+}
+
+.cloud3 {
+  animation: cloudMove 12s 9s infinite linear backwards;
+  top: 150px;
+}
+
+.cloud4 {
+  animation: cloudMove 19s 15s infinite linear backwards;
+  top: 180px;
+}
+
+@keyframes cloudMove {
+  from {
+    left: -80px;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+/* TRIBUNE */
+
+.tribune-div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  bottom: 50px;
+}
+
+.tribune {
+  width: 350px;
+}
+
+.tribune-body {
+  width: 350px;
+}
+
+.wings {
+  width: 500px;
+  position: absolute;
+  top: -62px;
+}
+
+#startButton:checked + .wings {
+  animation: spin1 5s ease-in, spin2 4s 5s linear, spin3 3s 9s linear,
+    spin4 2s 12s linear infinite;
+}
+
+@keyframes spin1 {
+  0% {
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin2 {
+  0% {
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin3 {
+  0% {
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin4 {
+  0% {
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* BUTTON */
+
+#startButton {
+  position: absolute;
+  bottom: -85px;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.fakeStartButton {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 1px 0px 2px 2px rgb(255, 108, 108);
+}
+
+.fakeStartButton-div {
+  position: absolute;
+  bottom: -90px;
+  width: 70px;
+  height: 70px;
+  background-color: rgb(29, 12, 12);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px 2px gray;
+}
+
+/* TEXT */
+.textArea {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+}
+
+.text1 {
+  font-size: 25px;
+  color: white;
+  margin: 0;
+}
+
+.text2 {
+  font-size: 20px;
+  color: white;
+  margin: 0;
+  font-style: italic;
+}
+
+span {
+  color: green;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px yellow;
+}
