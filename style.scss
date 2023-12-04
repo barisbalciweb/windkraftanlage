@@ -40,8 +40,6 @@ body {
   animation: sun 1.5s infinite alternate;
 }
 @keyframes sun {
-  from {
-  }
   to {
     background-color: rgb(255, 230, 0);
   }
@@ -52,6 +50,7 @@ body {
   border-radius: 20px;
   background-color: yellow;
   position: absolute;
+  animation: sunLight 1s infinite alternate;
 }
 .sunlight1 {
   top: 20px;
@@ -78,10 +77,6 @@ body {
   right: 10px;
   transform: rotate(-30deg);
 }
-.sunlight {
-  animation: sunLight 1s infinite alternate;
-}
-
 @keyframes sunLight {
   from {
     opacity: 1;
@@ -114,8 +109,6 @@ body {
   top: 25%;
 }
 @keyframes cloudMove {
-  from {
-  }
   to {
     right: -20%;
   }
@@ -125,31 +118,28 @@ body {
   @include flex-column-center;
   position: relative;
   overflow: hidden;
-}
-.tribune-body {
-  width: 350px;
-}
-.wings {
-  width: 500px;
-  position: absolute;
-  top: -62px;
-  z-index: 50;
-}
-#startButton:checked + .wings {
-  animation: spinStart 4s cubic-bezier(0.78, 0.17, 0.83, 0.67),
-    spinMotion 1.5s 4s linear infinite;
+
+  .tribune-body {
+    width: 350px;
+  }
+  .wings {
+    width: 500px;
+    position: absolute;
+    top: -62px;
+    z-index: 50;
+  }
+  #startButton:checked + .wings {
+    animation: spinStart 4s cubic-bezier(0.78, 0.17, 0.83, 0.67),
+      spinMotion 1.5s 4s linear infinite;
+  }
 }
 @keyframes spinStart {
-  0% {
-  }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
 @keyframes spinMotion {
-  0% {
-  }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
@@ -162,13 +152,6 @@ body {
   opacity: 0;
   cursor: pointer;
 }
-.fakeStartButton {
-  width: 50px;
-  height: 50px;
-  background-color: red;
-  border-radius: 50%;
-  box-shadow: 2px 0px 2px 2px rgb(255, 108, 108);
-}
 .fakeStartButton-div {
   @include flex-row-center;
   position: absolute;
@@ -178,6 +161,14 @@ body {
   background-color: #1d0c0c;
   border-radius: 50%;
   box-shadow: 0px 0px 10px 2px gray;
+
+  .fakeStartButton {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    box-shadow: 2px 0px 2px 2px rgb(255, 108, 108);
+  }
 }
 /* ------------------------ TEXT ------------------------*/
 .text {
@@ -191,14 +182,13 @@ body {
   padding: 10px;
   bottom: 25%;
   animation: flash 1s infinite alternate;
-}
-span {
-  color: rgb(87, 167, 87);
-  font-weight: bold;
+
+  span {
+    color: rgb(87, 167, 87);
+    font-weight: bold;
+  }
 }
 @keyframes flash {
-  from {
-  }
   to {
     color: rgba(255, 255, 0, 0.632);
   }
@@ -230,9 +220,6 @@ span {
     font-size: 40px;
     bottom: 23%;
   }
-  .text2 {
-    font-size: 20px;
-  }
 }
 @media screen and (min-width: 1025px) {
   // ########### TRIBUNE ###########
@@ -256,7 +243,6 @@ span {
     animation-duration: 39s;
   }
   // ########### TEXT ###########
-
   .text {
     font-size: 40px;
   }
