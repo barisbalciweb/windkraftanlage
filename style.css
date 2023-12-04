@@ -139,25 +139,15 @@ body {
 }
 
 #startButton:checked + .wings {
-  animation: spin1 5s ease-in, spin2 3s 5s linear, spin3 3s 8s linear, spin4 2s 11s linear infinite;
+  animation: spinStart 4s cubic-bezier(0.78, 0.17, 0.83, 0.67), spinMotion 1.5s 4s linear infinite;
 }
 
-@keyframes spin1 {
+@keyframes spinStart {
   100% {
     transform: rotate(360deg);
   }
 }
-@keyframes spin2 {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes spin3 {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes spin4 {
+@keyframes spinMotion {
   100% {
     transform: rotate(360deg);
   }
