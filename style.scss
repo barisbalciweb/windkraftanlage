@@ -16,7 +16,6 @@ body {
   @include flex-column-center;
   position: relative;
   width: 100vw;
-  max-width: 100vw;
   height: 100vh;
   margin: 0;
   background: linear-gradient(
@@ -26,7 +25,6 @@ body {
     )
     no-repeat;
   font-family: "Saira", sans-serif;
-  overflow: hidden;
 }
 /* ------------------------ SUN ------------------------ */
 .sun {
@@ -86,31 +84,40 @@ body {
   }
 }
 /* ------------------------ CLOUD ------------------------ */
-.cloud {
-  width: 80px;
+.cloud-div {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   position: absolute;
-  right: 100%;
+  top: 0;
+  overflow: hidden; //using this property here was the solution for overflow!
+}
+.cloud {
+  width: 100px;
   opacity: 0.8;
 }
 .cloud1 {
   animation: cloudMove 25s infinite linear backwards;
-  top: 10%;
 }
 .cloud2 {
   animation: cloudMove 15s 3s infinite linear backwards;
-  top: 15%;
 }
 .cloud3 {
   animation: cloudMove 12s 9s infinite linear backwards;
-  top: 20%;
 }
 .cloud4 {
   animation: cloudMove 19s 15s infinite linear backwards;
-  top: 25%;
 }
 @keyframes cloudMove {
+  from {
+    transform: translate(calc((50vw + 50%) * -1));
+  }
   to {
-    right: -20%;
+    transform: translate(calc(50vw + 50%));
   }
 }
 /* ------------------------ TRIBUNE ------------------------*/
@@ -193,35 +200,7 @@ body {
     color: rgba(255, 255, 0, 0.632);
   }
 }
-@media screen and (min-width: 431px) {
-  // ########### TRIBUNE ###########
-  .tribune-div {
-    transform: scale(1.6);
-  }
-  // ########### CLOUD ###########
-  .cloud {
-    width: 150px;
-  }
-  .cloud1 {
-    animation-duration: 35s;
-  }
-  .cloud2 {
-    animation-duration: 25s;
-  }
-  .cloud3 {
-    animation-duration: 22s;
-  }
-  .cloud4 {
-    animation-duration: 29s;
-  }
-  // ########### TEXT ###########
-  .text {
-    text-align: center;
-    font-size: 40px;
-    bottom: 23%;
-  }
-}
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
   // ########### TRIBUNE ###########
   .tribune-div {
     transform: scale(1.5);
@@ -229,21 +208,5 @@ body {
   // ########### CLOUD ###########
   .cloud {
     width: 170px;
-  }
-  .cloud1 {
-    animation-duration: 45s;
-  }
-  .cloud2 {
-    animation-duration: 35s;
-  }
-  .cloud3 {
-    animation-duration: 32s;
-  }
-  .cloud4 {
-    animation-duration: 39s;
-  }
-  // ########### TEXT ###########
-  .text {
-    font-size: 40px;
   }
 }

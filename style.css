@@ -9,12 +9,10 @@ body {
   align-items: center;
   position: relative;
   width: 100vw;
-  max-width: 100vw;
   height: 100vh;
   margin: 0;
   background: linear-gradient(to bottom, skyblue 50%, rgba(61, 37, 37, 0.794) 50%) no-repeat;
   font-family: "Saira", sans-serif;
-  overflow: hidden;
 }
 
 /* ------------------------ SUN ------------------------ */
@@ -40,6 +38,7 @@ body {
   border-radius: 20px;
   background-color: yellow;
   position: absolute;
+  animation: sunLight 1s infinite alternate;
 }
 
 .sunlight1 {
@@ -72,10 +71,6 @@ body {
   transform: rotate(-30deg);
 }
 
-.sunlight {
-  animation: sunLight 1s infinite alternate;
-}
-
 @keyframes sunLight {
   from {
     opacity: 1;
@@ -85,36 +80,46 @@ body {
   }
 }
 /* ------------------------ CLOUD ------------------------ */
-.cloud {
-  width: 80px;
+.cloud-div {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   position: absolute;
-  right: 100%;
+  top: 0;
+  overflow: hidden;
+}
+
+.cloud {
+  width: 100px;
   opacity: 0.8;
 }
 
 .cloud1 {
   animation: cloudMove 25s infinite linear backwards;
-  top: 10%;
 }
 
 .cloud2 {
   animation: cloudMove 15s 3s infinite linear backwards;
-  top: 15%;
 }
 
 .cloud3 {
   animation: cloudMove 12s 9s infinite linear backwards;
-  top: 20%;
 }
 
 .cloud4 {
   animation: cloudMove 19s 15s infinite linear backwards;
-  top: 25%;
 }
 
 @keyframes cloudMove {
+  from {
+    transform: translate(calc((50vw + 50%) * -1));
+  }
   to {
-    right: -20%;
+    transform: translate(calc(50vw + 50%));
   }
 }
 /* ------------------------ TRIBUNE ------------------------*/
@@ -126,29 +131,26 @@ body {
   position: relative;
   overflow: hidden;
 }
-
-.tribune-body {
+.tribune-div .tribune-body {
   width: 350px;
 }
-
-.wings {
+.tribune-div .wings {
   width: 500px;
   position: absolute;
   top: -62px;
   z-index: 50;
 }
-
-#startButton:checked + .wings {
+.tribune-div #startButton:checked + .wings {
   animation: spinStart 4s cubic-bezier(0.78, 0.17, 0.83, 0.67), spinMotion 1.5s 4s linear infinite;
 }
 
 @keyframes spinStart {
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
 @keyframes spinMotion {
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
@@ -162,14 +164,6 @@ body {
   cursor: pointer;
 }
 
-.fakeStartButton {
-  width: 50px;
-  height: 50px;
-  background-color: red;
-  border-radius: 50%;
-  box-shadow: 2px 0px 2px 2px rgb(255, 108, 108);
-}
-
 .fakeStartButton-div {
   display: flex;
   justify-content: center;
@@ -181,6 +175,13 @@ body {
   background-color: #1d0c0c;
   border-radius: 50%;
   box-shadow: 0px 0px 10px 2px gray;
+}
+.fakeStartButton-div .fakeStartButton {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 2px 0px 2px 2px rgb(255, 108, 108);
 }
 
 /* ------------------------ TEXT ------------------------*/
@@ -196,8 +197,7 @@ body {
   bottom: 25%;
   animation: flash 1s infinite alternate;
 }
-
-span {
+.text span {
   color: rgb(87, 167, 87);
   font-weight: bold;
 }
@@ -207,55 +207,12 @@ span {
     color: rgba(255, 255, 0, 0.632);
   }
 }
-@media screen and (min-width: 431px) {
-  .tribune-div {
-    transform: scale(1.6);
-  }
-  .cloud {
-    width: 150px;
-  }
-  .cloud1 {
-    animation-duration: 35s;
-  }
-  .cloud2 {
-    animation-duration: 25s;
-  }
-  .cloud3 {
-    animation-duration: 22s;
-  }
-  .cloud4 {
-    animation-duration: 29s;
-  }
-  .text {
-    text-align: center;
-    font-size: 40px;
-    bottom: 23%;
-  }
-  .text2 {
-    font-size: 20px;
-  }
-}
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
   .tribune-div {
     transform: scale(1.5);
   }
   .cloud {
     width: 170px;
-  }
-  .cloud1 {
-    animation-duration: 45s;
-  }
-  .cloud2 {
-    animation-duration: 35s;
-  }
-  .cloud3 {
-    animation-duration: 32s;
-  }
-  .cloud4 {
-    animation-duration: 39s;
-  }
-  .text {
-    font-size: 40px;
   }
 }
 
