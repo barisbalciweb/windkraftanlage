@@ -153,6 +153,7 @@ body {
 /* ------------------------ BUTTON ------------------------ */
 #startButton {
   position: absolute;
+  z-index: 100;
   bottom: 10%;
   width: 50px;
   height: 50px;
@@ -162,6 +163,7 @@ body {
 .fakeStartButton-div {
   @include flex-row-center;
   position: absolute;
+  z-index: 50;
   bottom: 9%;
   width: 70px;
   height: 70px;
