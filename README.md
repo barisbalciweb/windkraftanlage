@@ -1,4 +1,4 @@
-# [https://barisbalcimusic.github.io/windkraftanlage/](https://barisbalcimusic.github.io/windkraftanlage/)
+# [Live Demo](https://barisbalciweb.github.io/windkraftanlage/)
 
 ## Description
 self created css-exercise with animations (Dec 4, 2023)
